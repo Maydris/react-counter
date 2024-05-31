@@ -1,14 +1,16 @@
 "use client"
 // import Image from "next/image";
-import React, { useState } from "react"; 
+import React, { useState } from "react";
+import { CSSProperties } from 'react';
 
 export default function Home() {
   const [counter, setCounter] = useState(0); 
 	const [initialCount, setInitialCount] = useState(0); 
 
-	const handleInitialCountChange = (event) => { 
-		setInitialCount(Number(event.target.value)); 
-	}; 
+
+	const handleInitialCountChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+		setInitialCount(Number(event.currentTarget.value));
+  }; 
 
 	const handleReset = () => { 
 		setCounter(initialCount); 
@@ -191,27 +193,27 @@ const styles = {
 		justifyContent: "center", 
 		height: "100vh", 
 		background: "#f8f8f8", 
-	}, 
+	} as CSSProperties, 
 	header: { 
 		fontSize: "1.4rem", 
 		margin: "1rem 0", 
 		color: "#333", 
 		textTransform: "uppercase", 
-	}, 
+	} as CSSProperties, 
 	heading: { 
 		color: "green", 
 		fontSize: "2rem", 
-	}, 
+	} as CSSProperties, 
 	counterValue: { 
 		fontSize: "3rem", 
 		fontWeight: "bold", 
 		margin: "1rem 0", 
 		color: "#007bff", 
-	}, 
+	} as CSSProperties, 
 	buttons: { 
 		display: "flex", 
 		justifyContent: "center", 
-	}, 
+	} as CSSProperties, 
 	button: { 
 		fontSize: "1rem", 
 		padding: "1rem", 
@@ -224,5 +226,5 @@ const styles = {
 		outline: "none", 
 		transition: "background 0.3s", 
 		boxShadow: "0px 0px 20px 0px grey", 
-	}, 
+	} as CSSProperties, 
 }; 
